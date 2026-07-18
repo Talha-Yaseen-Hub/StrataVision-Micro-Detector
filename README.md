@@ -16,47 +16,10 @@
 </div>
 
 <div align="center">
-<div align="center">
+<img src="https://primer.style/octicons/cpu-24.svg" width="28"> | <img src="https://primer.style/octicons/rocket-24.svg" width="28"> | <img src="https://primer.style/octicons/bullseye-24.svg" width="28"> | <img src="https://primer.style/octicons/graph-24.svg" width="28"> |
+|:---:|:---:|:---:|:---:|
+| **4-Head P2**<br>Architecture | **SAHI**<br>Powered | **200+**<br>Open-Vocab Classes | **COCO mAP<sub>S</sub>**<br>Evaluated |
 
-<table>
-<tr>
-
-<td align="center" width="220">
-
-### 🧠
-**4-Head P2**<br>
-Architecture
-
-</td>
-
-<td align="center" width="220">
-
-### 🚀
-**SAHI**<br>
-Powered
-
-</td>
-
-<td align="center" width="220">
-
-### 🎯
-**200+**<br>
-Open-Vocabulary Classes
-
-</td>
-
-<td align="center" width="220">
-
-### 📊
-**COCO mAP<sub>S</sub>**<br>
-Evaluated
-
-</td>
-
-</tr>
-</table>
-
-</div>
 </div>
 
 <div align="center">
