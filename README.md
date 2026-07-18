@@ -25,6 +25,8 @@
 
 <br/>
 
+> 📐 **A note on the diagrams in this README:** every flowchart below is written in **Mermaid** — GitHub renders it natively as a real diagram right in the file view, no setup needed. It'll only show as a plain code block if you're viewing this file somewhere that doesn't support Mermaid (a plain text editor, some local Markdown previewers, etc.). If that happens, open the file on **github.com** directly, or use an editor with Mermaid support (e.g. VS Code with the "Markdown Preview Mermaid Support" extension).
+
 ---
 
 <div align="center">
@@ -36,8 +38,9 @@
 <td valign="top" width="25%">
 
 **📖 Overview**
+- [Tech Stack](#-tech-stack)
 - [Sample Outputs](#️-sample-detection-outputs)
-- [Mission](#-1-project-overview--mission)
+- [Mission](#-project-overview--mission)
 - [The Problem](#the-problem-standard-detectors-are-blind-to-small-objects)
 - [The Solution](#the-solution-three-technologies-working-together)
 
@@ -58,6 +61,7 @@
 - [File Reference](#-file-reference)
 - [System Workflow](#-end-to-end-system-workflow)
 - [Config Reference](#️-configuration-reference)
+- [Dataset & Label Format](#️-dataset--label-format)
 
 </td>
 <td valign="top" width="25%">
@@ -66,6 +70,8 @@
 - [Installation](#-installation--execution-guide)
 - [Live Camera Controls](#-camera-keyboard-controls)
 - [Training Pipeline](#option-b--train-your-custom-small-object-model)
+- [Troubleshooting](#-troubleshooting)
+- [FAQ](#-faq)
 - [Contributing](#-contributing)
 
 </td>
@@ -73,6 +79,35 @@
 </table>
 
 </div>
+
+---
+
+<br/>
+
+## 🧰 Tech Stack
+
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=python,pytorch,opencv,git,github,vscode,linux&theme=dark" />
+
+</div>
+
+<div align="center">
+
+| Technology | Role in This Project |
+|:---:|:---|
+| **Python** | The language every script in the pipeline is written in |
+| **PyTorch** | The deep learning backend underneath the YOLOv8 / P2 architecture |
+| **OpenCV** | Image I/O, bounding-box rendering, and the live camera feed |
+| **Git & GitHub** | Version control and where this repo is hosted |
+| **VS Code** | Primary development environment |
+| **Linux** | Training and inference run identically across Linux, macOS, and Windows |
+
+</div>
+
+<div align="right"><a href="#small-object-detection">↑ back to top</a></div>
+
+<br/>
 
 ---
 
@@ -111,7 +146,7 @@ A look at the pipeline running on three very different scenes — dense street t
 
 <br/>
 
-## 📌 1. Project Overview & Mission
+## 📌 Project Overview & Mission
 
 Standard computer vision models — including baseline YOLOv8 — struggle badly with **small object detection**. When an object occupies only a tiny fraction of a frame (a drone in the sky, a bolt on machinery, an ant on a table), the successive downsampling inside a standard backbone strips away the very features a detection head needs before it ever gets a chance to look at them.
 
@@ -147,7 +182,7 @@ Together these three form a pipeline that's equally useful for **offline batch a
 
 ---
 
-## 🛠️ 3. Core Features & Key Innovations
+## 🛠️ Core Features & Key Innovations
 
 ### 1. 🔬 P2 High-Resolution Feature Map (4-Head Architecture)
 
@@ -228,6 +263,22 @@ The live camera pipeline doesn't use a fixed, retrained class list at all — it
 
 Because YOLO-World matches image regions against text embeddings (via a CLIP-style encoder — see `download_clip.py`) rather than a fixed classifier head, no retraining is required to add or change what it looks for.
 
+```mermaid
+flowchart LR
+    T["Text Prompt<br/>e.g. 'insect', 'handbag'"] --> TE[CLIP Text Encoder]
+    IMG[Live Camera Frame] --> IE[Vision Backbone]
+    TE --> EMB["Shared Embedding Space"]
+    IE --> EMB
+    EMB --> MATCH[Similarity Matching]
+    MATCH --> BOX["Bounding Boxes<br/>+ Class Labels"]
+
+    style T fill:#0f2027,stroke:#00E5FF,color:#eaeaea
+    style IMG fill:#0f2027,stroke:#00E5FF,color:#eaeaea
+    style BOX fill:#203a43,stroke:#00E5FF,color:#eaeaea
+```
+
+Instead of predicting from a fixed set of trained class indices, the model projects both the camera frame and the class-set text prompts into the same embedding space and picks whichever text label is the closest match to each detected region — which is exactly why swapping `download_clip.py`'s weights or the active class set changes what gets detected without touching the model's trained weights at all.
+
 <br/>
 
 ### 4. 📊 COCO mAP_S Standard Metrics Evaluation
@@ -252,7 +303,7 @@ Small-object performance can easily hide inside an overall mAP score — a model
 
 ---
 
-## 🏗️ 2. Repository Folder & File Structure
+## 🏗️ Repository Folder & File Structure
 
 ```
 Object-Detection/
@@ -462,7 +513,7 @@ The pipeline forks in two directions once weights exist: **offline, high-resolut
 
 ---
 
-## 💻 5. Installation & Execution Guide
+## 💻 Installation & Execution Guide
 
 ### Prerequisites
 
@@ -516,6 +567,23 @@ python src/live_camera.py --world --sahi
 | `Q` | Quit |
 
 </div>
+
+**How the modes interact:**
+
+```mermaid
+stateDiagram-v2
+    [*] --> FullFrame
+    FullFrame --> Sliced: press M
+    Sliced --> FullFrame: press M
+    FullFrame --> Zoom1x
+    Zoom1x --> Zoom2x: press Z
+    Zoom2x --> Zoom4x: press Z
+    Zoom4x --> Zoom1x: press Z
+    FullFrame --> FullFrame: press C (cycle class set)
+    FullFrame --> [*]: press Q
+```
+
+SAHI mode (`M`) and zoom (`Z`) are independent toggles rather than a linear sequence — you can be zoomed in *and* sliced at the same time, which is the combination worth reaching for when trying to pick out something genuinely tiny in the frame.
 
 <div align="right"><a href="#small-object-detection">↑ back to top</a></div>
 
@@ -600,6 +668,93 @@ python src/evaluate.py
 | `config/training_config.yaml` | Epochs, image size, optimizer, and other training hyperparameters | Any time you're tuning training runs |
 
 </div>
+
+<div align="right"><a href="#small-object-detection">↑ back to top</a></div>
+
+<br/>
+
+---
+
+## 🗂️ Dataset & Label Format
+
+Two different label formats show up across this pipeline, and knowing which script expects which one saves a lot of confusion:
+
+```mermaid
+flowchart LR
+    A[Raw Images] --> B["YOLO .txt Labels<br/>one file per image"]
+    B --> C["dataset_utils.py<br/>Structural Validation"]
+    C --> D["coco_converter.py<br/>YOLO → COCO JSON"]
+    D --> E["instances_val.json<br/>COCO-format annotations"]
+    B --> F["train.py<br/>reads YOLO format directly"]
+    E --> G["evaluate.py<br/>reads COCO format directly"]
+
+    style A fill:#0f2027,stroke:#00E5FF,color:#eaeaea
+    style E fill:#203a43,stroke:#00E5FF,color:#eaeaea
+```
+
+<div align="center">
+
+| Format | Used By | Structure |
+|:---|:---|:---|
+| **YOLO `.txt`** | `train.py`, `generate_dataset.py` | One `.txt` file per image, one line per object: `class_id x_center y_center width height` — all four coordinates normalized to `0–1` relative to image size |
+| **COCO `.json`** | `evaluate.py` | A single JSON file per split with `images`, `annotations`, and `categories` arrays — the format the official COCO evaluation API expects |
+
+</div>
+
+`coco_converter.py` exists specifically to bridge the two — you label and train in the lighter YOLO format, then convert only the validation/test split to COCO format right before evaluation, so `evaluate.py` can report standard mAP_S / mAP_M / mAP_L numbers.
+
+<div align="right"><a href="#small-object-detection">↑ back to top</a></div>
+
+<br/>
+
+---
+
+## 🧯 Troubleshooting
+
+<div align="center">
+
+| Symptom | Likely Cause | Fix |
+|:---|:---|:---|
+| `CUDA out of memory` during training | Batch size or image size too large for your GPU | Lower `batch` and/or `imgsz` in `config/training_config.yaml` |
+| `live_camera.py` can't find a camera | Wrong or missing camera index | Check available camera indices on your OS and pass the correct one as an argument |
+| CLIP download stalls or fails partway | Network interruption mid-download | `download_clip.py` is resumable — just rerun it, it'll pick up where it left off |
+| `evaluate.py` reports all zeros | Validation annotations weren't converted to COCO format first | Run `coco_converter.py` on the val split before evaluating |
+| Small objects still missed after training | Not enough small-object examples in the dataset, or `imgsz` too low | Increase small-object representation in `generate_dataset.py`, or verify training used the full 1280px input the P2 head expects |
+| Import errors right after `pip install` | Dependencies installed into the wrong Python environment | Confirm `which python` / `where python` points at the same interpreter you used for `pip install -r requirements.txt` |
+
+</div>
+
+<div align="right"><a href="#small-object-detection">↑ back to top</a></div>
+
+<br/>
+
+---
+
+## ❓ FAQ
+
+<details>
+<summary><strong>Do I need a GPU to use this project?</strong></summary>
+<br/>
+Only really for training at a reasonable speed. Inference — single-image, SAHI, and the live camera — will run on CPU too, just slower, especially with SAHI slicing enabled since it multiplies the number of forward passes per image.
+</details>
+
+<details>
+<summary><strong>Can I add my own object classes without retraining?</strong></summary>
+<br/>
+For the live camera / YOLO-World path, yes — it's open-vocabulary, so new class sets are just new text prompts. For the trained P2 model used by <code>train.py</code>, <code>sahi_inference.py</code>, and <code>evaluate.py</code>, no — that model is trained against the fixed classes in <code>config/dataset.yaml</code>, so adding a class means updating that config and retraining.
+</details>
+
+<details>
+<summary><strong>What's the difference between <code>inference.py</code> and <code>sahi_inference.py</code>?</strong></summary>
+<br/>
+<code>inference.py</code> runs the model once on the whole image as-is — fine for normal-resolution images. <code>sahi_inference.py</code> slices the image first, as described in the SAHI section above — use it for very high-resolution or drone imagery where small objects would otherwise be lost to downsampling.
+</details>
+
+<details>
+<summary><strong>Why is the P2 head only used in the custom-trained pipeline and not in the live camera?</strong></summary>
+<br/>
+The P2 head is part of the custom-trained architecture (<code>models/yolov8n-p2.yaml</code>), built for the fixed classes in your dataset. The live camera runs YOLO-World, a separate open-vocabulary model built for real-time general-purpose detection rather than the specific small-object classes the P2 model was trained on.
+</details>
 
 <div align="right"><a href="#small-object-detection">↑ back to top</a></div>
 
