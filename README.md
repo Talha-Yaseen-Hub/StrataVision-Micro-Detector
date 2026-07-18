@@ -87,11 +87,6 @@
 
 ## 🧰 Tech Stack
 
-<div align="center">
-
-<img src="https://skillicons.dev/icons?i=python,pytorch,opencv,git,github,vscode,linux&theme=dark" />
-
-</div>
 
 <div align="center">
 
