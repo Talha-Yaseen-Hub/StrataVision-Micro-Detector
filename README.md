@@ -288,7 +288,7 @@ Small-object performance can easily hide inside an overall mAP score — a model
 
 ## 🏗️ Repository Folder & File Structure
 
-```
+---
 Object-Detection/
 │
 ├── config/                         # Configuration files for dataset, training & SAHI
@@ -327,7 +327,7 @@ Object-Detection/
 ├── requirements.txt                # System Python dependencies
 ├── setup.py                        # Package installation script
 └── README.md                       # Project documentation
-```
+---
 
 > ✏️ **Correction from the original notes:** `src/live_camera.py` had been accidentally listed twice under the same name as `sahi_inference.py`. It's fixed above and cross-checked against the [Summary Table](#-summary-table-of-key-scripts) below — worth double-checking your actual filesystem matches this before anyone else clones the repo.
 
