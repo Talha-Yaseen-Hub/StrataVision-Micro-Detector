@@ -122,15 +122,18 @@ A look at the pipeline running on three very different scenes — dense street t
 <table>
 <tr>
 <td align="center" width="33%">
-<img src="output/samples/urban_street_detection.jpg" width="100%"/>
+<img width="1280" height="720" alt="Image 1" src="https://github.com/user-attachments/assets/374640aa-388e-4503-afdd-777246b061a7" />
+
 <br/><sub><strong>Urban Street Scene</strong> — cyclists, pedestrians, and a truck detected simultaneously, including a partially-occluded child riding in a cargo bike</sub>
 </td>
 <td align="center" width="33%">
-<img src="output/samples/indoor_scene_detection.jpg" width="100%"/>
+<img width="1600" height="1029" alt="Image 2" src="https://github.com/user-attachments/assets/42b49e4e-a202-4b2f-9ef2-67b617ed3e2f" />
+
 <br/><sub><strong>Cluttered Indoor Scene</strong> — a dozen+ small, overlapping objects on one table correctly separated: laptop, bottles, glassware, mouse, handbag, and more</sub>
 </td>
 <td align="center" width="33%">
-<img src="output/samples/traffic_scene_detection.jpg" width="100%"/>
+<img width="800" height="600" alt="Image 3" src="https://github.com/user-attachments/assets/69d0de24-62cf-4f91-aac4-208efe83fd31" />
+
 <br/><sub><strong>Traffic & Pedestrian Scenario</strong> — road vehicles, cyclists, pedestrians, and traffic signals classified together in one frame</sub>
 </td>
 </tr>
