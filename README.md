@@ -339,6 +339,8 @@ Object-Detection/
 └── README.md
 ```
 
+<br/><br/>
+
 ### 📁 Folder & File Summary
 
 | 📂 Folder / File | 📝 Description |
