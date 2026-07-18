@@ -16,51 +16,75 @@
 </div>
 
 <div align="center">
-  <table width="100%" style="border-collapse: collapse; border: none;">
-    <tr style="border: none;">
-<!-- P2 Architecture -->
-      <td align="center" width="25%" style="border: none; padding: 10px;">
-        <div style="background: linear-gradient(135deg, #1a2a3a, #0d1620); padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 1px solid #2a3b4c;">
-          <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/layer-group.svg" width="40" height="40" style="filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg) brightness(2);" alt="Layers"/>
-          <h3 style="color: #ffffff; margin: 15px 0 5px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">4-Head P2</h3>
-          <p style="color: #8b9bb4; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">Architecture</p>
-        </div>
-      </td>
-
-<!-- SAHI Powered -->
-<td align="center" width="25%" style="border: none; padding: 10px;">
-        <div style="background: linear-gradient(135deg, #1a2a3a, #0d1620); padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 1px solid #2a3b4c;">
-          <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/table-cells.svg" width="40" height="40" style="filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg) brightness(2);" alt="Grid"/>
-          <h3 style="color: #ffffff; margin: 15px 0 5px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">SAHI</h3>
-          <p style="color: #8b9bb4; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">Powered Inference</p>
-        </div>
-      </td>
-
-<!-- 200+ Classes -->
-<td align="center" width="25%" style="border: none; padding: 10px;">
-        <div style="background: linear-gradient(135deg, #1a2a3a, #0d1620); padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 1px solid #2a3b4c;">
-          <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/tags.svg" width="40" height="40" style="filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg) brightness(2);" alt="Tags"/>
-          <h3 style="color: #ffffff; margin: 15px 0 5px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">200+ Classes</h3>
-          <p style="color: #8b9bb4; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">Open-Vocab</p>
-        </div>
-      </td>
-
-      <!-- COCO Evaluated -->
-      <td align="center" width="25%" style="border: none; padding: 10px;">
-        <div style="background: linear-gradient(135deg, #1a2a3a, #0d1620); padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 1px solid #2a3b4c;">
-          <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/chart-line.svg" width="40" height="40" style="filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg) brightness(2);" alt="Chart"/>
-          <h3 style="color: #ffffff; margin: 15px 0 5px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">COCO mAP_S</h3>
-          <p style="color: #8b9bb4; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">Evaluated</p>
-        </div>
-      </td>
+  <svg width="100%" viewBox="0 0 1000 120" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Gradient 1: Deep Blue/Navy -->
+      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#1a2a3a" />
+        <stop offset="100%" stop-color="#0d1620" />
+      </linearGradient>
       
-    </tr>
-  </table>
+      <!-- Gradient 2: Slate/Teal -->
+  <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#203a43" />
+        <stop offset="100%" stop-color="#0f2027" />
+      </linearGradient>
+
+      <!-- Gradient 3: Steel/Blue -->
+  <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#2c5364" />
+        <stop offset="100%" stop-color="#203a43" />
+      </linearGradient>
+
+      <!-- Drop Shadow for Cards -->
+  <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+        <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.4"/>
+      </filter>
+
+      <!-- Styles for Text -->
+  <style>
+        .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #ffffff; text-transform: uppercase; letter-spacing: 1px; }
+        .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 500; fill: #8b9bb4; }
+      </style>
+  </defs>
+
+    <!-- Card 1: P2 Architecture -->
+  <g transform="translate(10, 10)">
+      <rect width="230" height="90" rx="12" fill="url(#grad1)" stroke="#2a3b4c" stroke-width="1" filter="url(#shadow)"/>
+      <!-- Layers Icon (Base64 SVG for GitHub compatibility) -->
+      <path d="M22.5 12L39.3 22l-16.8 10L5.7 22l16.8-10zm0-7.8L0 15l22.5 13.5L45 15 22.5 4.2zm0 33L5.7 25.8l-4.1 2.4L22.5 41l20.9-12.8-4.1-2.4L22.5 37.2z" fill="#4fa0ff" transform="translate(103, 15) scale(0.6)"/>
+      <text x="115" y="65" text-anchor="middle" class="title">4-Head P2</text>
+      <text x="115" y="82" text-anchor="middle" class="subtitle">Architecture</text>
+    </g>
+
+    <!-- Card 2: SAHI Powered -->
+  <g transform="translate(260, 10)">
+      <rect width="230" height="90" rx="12" fill="url(#grad2)" stroke="#2a3b4c" stroke-width="1" filter="url(#shadow)"/>
+      <!-- Grid/Cells Icon -->
+      <path d="M18 0H4C1.8 0 0 1.8 0 4v14h22V0h-4zM0 22v14c0 2.2 1.8 4 4 4h14V22H0zm22 18h14c2.2 0 4-1.8 4-4V22H22v18zm18-22V4c0-2.2-1.8-4-4-4H22v22h18z" fill="#60d673" transform="translate(105, 12) scale(0.7)"/>
+      <text x="115" y="65" text-anchor="middle" class="title">SAHI</text>
+      <text x="115" y="82" text-anchor="middle" class="subtitle">Powered Inference</text>
+    </g>
+
+    <!-- Card 3: 200+ Classes -->
+  <g transform="translate(510, 10)">
+      <rect width="230" height="90" rx="12" fill="url(#grad3)" stroke="#2a3b4c" stroke-width="1" filter="url(#shadow)"/>
+      <!-- Tags/Labels Icon -->
+      <path d="M0 6v14.4c0 1.6.6 3.1 1.8 4.2l20.8 20.8c2.3 2.3 6.1 2.3 8.5 0l14.4-14.4c2.3-2.3 2.3-6.1 0-8.5L24.6 1.8C23.5.6 22 0 20.4 0H6C2.7 0 0 2.7 0 6zm9 10.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5z" fill="#f5b84f" transform="translate(103, 12) scale(0.65)"/>
+      <text x="115" y="65" text-anchor="middle" class="title">200+ Classes</text>
+      <text x="115" y="82" text-anchor="middle" class="subtitle">Open-Vocab</text>
+    </g>
+
+    <!-- Card 4: COCO Evaluated -->
+  <g transform="translate(760, 10)">
+      <rect width="230" height="90" rx="12" fill="url(#grad1)" stroke="#2a3b4c" stroke-width="1" filter="url(#shadow)"/>
+      <!-- Chart/Line Icon -->
+      <path d="M42.7 0H2.3C1 0 0 1 0 2.3v37.4c0 .8.4 1.5 1.1 1.9.4.2.8.4 1.2.4.5 0 1-.2 1.4-.5l8.6-8.6 9.3 9.3c.6.6 1.6.6 2.2 0l10.9-10.9 6.2 6.2c.4.4.9.6 1.4.6s1-.2 1.4-.6c.8-.8.8-2 0-2.8l-7.3-7.3c-.6-.6-1.6-.6-2.2 0l-10.9 10.9-9.3-9.3c-.6-.6-1.6-.6-2.2 0l-7.1 7.1V4.7h37.4V21c0 1.3 1 2.3 2.3 2.3s2.3-1 2.3-2.3V2.3C45 1 44 0 42.7 0z" fill="#ff878f" transform="translate(102, 12) scale(0.65)"/>
+      <text x="115" y="65" text-anchor="middle" class="title">COCO mAP_S</text>
+      <text x="115" y="82" text-anchor="middle" class="subtitle">Evaluated</text>
+    </g>
+  </svg>
 </div>
-
-<br/>
-
-> 📐 **A note on the diagrams in this README:** every flowchart below is written in **Mermaid** — GitHub renders it natively as a real diagram right in the file view, no setup needed. It'll only show as a plain code block if you're viewing this file somewhere that doesn't support Mermaid (a plain text editor, some local Markdown previewers, etc.). If that happens, open the file on **github.com** directly, or use an editor with Mermaid support (e.g. VS Code with the "Markdown Preview Mermaid Support" extension).
 
 ---
 
