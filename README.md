@@ -1,3 +1,4 @@
+<a id="small-object-detection"></a>
 <div align="center">
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=240&section=header&text=Small%20Object%20Detection&fontSize=54&fontColor=ffffff&animation=fadeIn&fontAlignY=32&desc=Real-Time%20Universal%20Detection%20System&descAlignY=52&descSize=20&fontList=Inter"/>
