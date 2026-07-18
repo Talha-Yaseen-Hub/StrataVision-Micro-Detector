@@ -15,11 +15,7 @@
 
 </div>
 
-<div align="center">
-  <img src="https://img.shields.io/badge/Status-Stable-success?style=for-the-badge&logo=github">
-  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge">
-</div>
-
+<br/><br/>
 <div align="center">
 
 ## 📋 Table of Contents
