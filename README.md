@@ -15,13 +15,47 @@
 
 </div>
 
-<br/><br/>
+<div align="center">
+  <table width="100%" style="border-collapse: collapse; border: none;">
+    <tr style="border: none;">
+<!-- P2 Architecture -->
+      <td align="center" width="25%" style="border: none; padding: 10px;">
+        <div style="background: linear-gradient(135deg, #1a2a3a, #0d1620); padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 1px solid #2a3b4c;">
+          <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/layer-group.svg" width="40" height="40" style="filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg) brightness(2);" alt="Layers"/>
+          <h3 style="color: #ffffff; margin: 15px 0 5px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">4-Head P2</h3>
+          <p style="color: #8b9bb4; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">Architecture</p>
+        </div>
+      </td>
 
-<img src="https://img.shields.io/badge/-4--Head%20P2%20Architecture-0f2027?style=flat-square&labelColor=000000" />
-<img src="https://img.shields.io/badge/-SAHI%20Powered-203a43?style=flat-square&labelColor=000000" />
-<img src="https://img.shields.io/badge/-200%2B%20Open--Vocab%20Classes-2c5364?style=flat-square&labelColor=000000" />
-<img src="https://img.shields.io/badge/-COCO%20mAP__S%20Evaluated-0f2027?style=flat-square&labelColor=000000" />
+<!-- SAHI Powered -->
+<td align="center" width="25%" style="border: none; padding: 10px;">
+        <div style="background: linear-gradient(135deg, #1a2a3a, #0d1620); padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 1px solid #2a3b4c;">
+          <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/table-cells.svg" width="40" height="40" style="filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg) brightness(2);" alt="Grid"/>
+          <h3 style="color: #ffffff; margin: 15px 0 5px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">SAHI</h3>
+          <p style="color: #8b9bb4; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">Powered Inference</p>
+        </div>
+      </td>
 
+<!-- 200+ Classes -->
+<td align="center" width="25%" style="border: none; padding: 10px;">
+        <div style="background: linear-gradient(135deg, #1a2a3a, #0d1620); padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 1px solid #2a3b4c;">
+          <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/tags.svg" width="40" height="40" style="filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg) brightness(2);" alt="Tags"/>
+          <h3 style="color: #ffffff; margin: 15px 0 5px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">200+ Classes</h3>
+          <p style="color: #8b9bb4; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">Open-Vocab</p>
+        </div>
+      </td>
+
+      <!-- COCO Evaluated -->
+      <td align="center" width="25%" style="border: none; padding: 10px;">
+        <div style="background: linear-gradient(135deg, #1a2a3a, #0d1620); padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 1px solid #2a3b4c;">
+          <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/chart-line.svg" width="40" height="40" style="filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg) brightness(2);" alt="Chart"/>
+          <h3 style="color: #ffffff; margin: 15px 0 5px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">COCO mAP_S</h3>
+          <p style="color: #8b9bb4; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">Evaluated</p>
+        </div>
+      </td>
+      
+    </tr>
+  </table>
 </div>
 
 <br/>
