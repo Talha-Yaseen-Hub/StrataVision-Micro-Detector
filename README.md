@@ -16,77 +16,8 @@
 </div>
 
 <div align="center">
-  <svg width="100%" viewBox="0 0 1000 120" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <!-- Gradient 1: Deep Blue/Navy -->
-      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#1a2a3a" />
-        <stop offset="100%" stop-color="#0d1620" />
-      </linearGradient>
-      
-      <!-- Gradient 2: Slate/Teal -->
-  <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#203a43" />
-        <stop offset="100%" stop-color="#0f2027" />
-      </linearGradient>
-
-      <!-- Gradient 3: Steel/Blue -->
-  <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#2c5364" />
-        <stop offset="100%" stop-color="#203a43" />
-      </linearGradient>
-
-      <!-- Drop Shadow for Cards -->
-  <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
-        <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.4"/>
-      </filter>
-
-      <!-- Styles for Text -->
-  <style>
-        .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #ffffff; text-transform: uppercase; letter-spacing: 1px; }
-        .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 500; fill: #8b9bb4; }
-      </style>
-  </defs>
-
-    <!-- Card 1: P2 Architecture -->
-  <g transform="translate(10, 10)">
-      <rect width="230" height="90" rx="12" fill="url(#grad1)" stroke="#2a3b4c" stroke-width="1" filter="url(#shadow)"/>
-      <!-- Layers Icon (Base64 SVG for GitHub compatibility) -->
-      <path d="M22.5 12L39.3 22l-16.8 10L5.7 22l16.8-10zm0-7.8L0 15l22.5 13.5L45 15 22.5 4.2zm0 33L5.7 25.8l-4.1 2.4L22.5 41l20.9-12.8-4.1-2.4L22.5 37.2z" fill="#4fa0ff" transform="translate(103, 15) scale(0.6)"/>
-      <text x="115" y="65" text-anchor="middle" class="title">4-Head P2</text>
-      <text x="115" y="82" text-anchor="middle" class="subtitle">Architecture</text>
-    </g>
-
-    <!-- Card 2: SAHI Powered -->
-  <g transform="translate(260, 10)">
-      <rect width="230" height="90" rx="12" fill="url(#grad2)" stroke="#2a3b4c" stroke-width="1" filter="url(#shadow)"/>
-      <!-- Grid/Cells Icon -->
-      <path d="M18 0H4C1.8 0 0 1.8 0 4v14h22V0h-4zM0 22v14c0 2.2 1.8 4 4 4h14V22H0zm22 18h14c2.2 0 4-1.8 4-4V22H22v18zm18-22V4c0-2.2-1.8-4-4-4H22v22h18z" fill="#60d673" transform="translate(105, 12) scale(0.7)"/>
-      <text x="115" y="65" text-anchor="middle" class="title">SAHI</text>
-      <text x="115" y="82" text-anchor="middle" class="subtitle">Powered Inference</text>
-    </g>
-
-    <!-- Card 3: 200+ Classes -->
-  <g transform="translate(510, 10)">
-      <rect width="230" height="90" rx="12" fill="url(#grad3)" stroke="#2a3b4c" stroke-width="1" filter="url(#shadow)"/>
-      <!-- Tags/Labels Icon -->
-      <path d="M0 6v14.4c0 1.6.6 3.1 1.8 4.2l20.8 20.8c2.3 2.3 6.1 2.3 8.5 0l14.4-14.4c2.3-2.3 2.3-6.1 0-8.5L24.6 1.8C23.5.6 22 0 20.4 0H6C2.7 0 0 2.7 0 6zm9 10.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5z" fill="#f5b84f" transform="translate(103, 12) scale(0.65)"/>
-      <text x="115" y="65" text-anchor="middle" class="title">200+ Classes</text>
-      <text x="115" y="82" text-anchor="middle" class="subtitle">Open-Vocab</text>
-    </g>
-
-    <!-- Card 4: COCO Evaluated -->
-  <g transform="translate(760, 10)">
-      <rect width="230" height="90" rx="12" fill="url(#grad1)" stroke="#2a3b4c" stroke-width="1" filter="url(#shadow)"/>
-      <!-- Chart/Line Icon -->
-      <path d="M42.7 0H2.3C1 0 0 1 0 2.3v37.4c0 .8.4 1.5 1.1 1.9.4.2.8.4 1.2.4.5 0 1-.2 1.4-.5l8.6-8.6 9.3 9.3c.6.6 1.6.6 2.2 0l10.9-10.9 6.2 6.2c.4.4.9.6 1.4.6s1-.2 1.4-.6c.8-.8.8-2 0-2.8l-7.3-7.3c-.6-.6-1.6-.6-2.2 0l-10.9 10.9-9.3-9.3c-.6-.6-1.6-.6-2.2 0l-7.1 7.1V4.7h37.4V21c0 1.3 1 2.3 2.3 2.3s2.3-1 2.3-2.3V2.3C45 1 44 0 42.7 0z" fill="#ff878f" transform="translate(102, 12) scale(0.65)"/>
-      <text x="115" y="65" text-anchor="middle" class="title">COCO mAP_S</text>
-      <text x="115" y="82" text-anchor="middle" class="subtitle">Evaluated</text>
-    </g>
-  </svg>
+  <img src="data:image/svg+xml;utf8,%3Csvg%20width%3D%221000%22%20height%3D%22120%22%20viewBox%3D%220%200%201000%20120%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22grad1%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231a2a3a%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230d1620%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22grad2%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23203a43%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f2027%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22grad3%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232c5364%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23203a43%22%20%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3Cfilter%20id%3D%22shadow%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22130%25%22%20height%3D%22130%25%22%3E%0A%20%20%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%224%22%20stdDeviation%3D%225%22%20flood-color%3D%22%23000000%22%20flood-opacity%3D%220.4%22%2F%3E%0A%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2810%2C%2010%29%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22230%22%20height%3D%2290%22%20rx%3D%2212%22%20fill%3D%22url%28%23grad1%29%22%20stroke%3D%22%232a3b4c%22%20stroke-width%3D%221%22%20filter%3D%22url%28%23shadow%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M22.5%2012L39.3%2022l-16.8%2010L5.7%2022l16.8-10zm0-7.8L0%2015l22.5%2013.5L45%2015%2022.5%204.2zm0%2033L5.7%2025.8l-4.1%202.4L22.5%2041l20.9-12.8-4.1-2.4L22.5%2037.2z%22%20fill%3D%22%234fa0ff%22%20transform%3D%22translate%28103%2C%2015%29%20scale%280.6%29%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22115%22%20y%3D%2265%22%20text-anchor%3D%22middle%22%20font-family%3D%22sans-serif%22%20font-size%3D%2215px%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%20text-transform%3D%22uppercase%22%20letter-spacing%3D%221px%22%3E4-Head%20P2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22115%22%20y%3D%2282%22%20text-anchor%3D%22middle%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212px%22%20font-weight%3D%22500%22%20fill%3D%22%238b9bb4%22%3EArchitecture%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%28260%2C%2010%29%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22230%22%20height%3D%2290%22%20rx%3D%2212%22%20fill%3D%22url%28%23grad2%29%22%20stroke%3D%22%232a3b4c%22%20stroke-width%3D%221%22%20filter%3D%22url%28%23shadow%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M18%200H4C1.8%200%200%201.8%200%204v14h22V0h-4zM0%2022v14c0%202.2%201.8%204%204%204h14V22H0zm22%2018h14c2.2%200%204-1.8%204-4V22H22v18zm18-22V4c0-2.2-1.8-4-4-4H22v22h18z%22%20fill%3D%22%2360d673%22%20transform%3D%22translate%28105%2C%2012%29%20scale%280.7%29%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22115%22%20y%3D%2265%22%20text-anchor%3D%22middle%22%20font-family%3D%22sans-serif%22%20font-size%3D%2215px%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%20text-transform%3D%22uppercase%22%20letter-spacing%3D%221px%22%3ESAHI%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22115%22%20y%3D%2282%22%20text-anchor%3D%22middle%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212px%22%20font-weight%3D%22500%22%20fill%3D%22%238b9bb4%22%3EPowered%20Inference%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%28510%2C%2010%29%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22230%22%20height%3D%2290%22%20rx%3D%2212%22%20fill%3D%22url%28%23grad3%29%22%20stroke%3D%22%232a3b4c%22%20stroke-width%3D%221%22%20filter%3D%22url%28%23shadow%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M0%206v14.4c0%201.6.6%203.1%201.8%204.2l20.8%2020.8c2.3%202.3%206.1%202.3%208.5%200l14.4-14.4c2.3-2.3%202.3-6.1%200-8.5L24.6%201.8C23.5.6%2022%200%2020.4%200H6C2.7%200%200%202.7%200%206zm9%2010.5c-1.9%200-3.5-1.6-3.5-3.5s1.6-3.5%203.5-3.5%203.5%201.6%203.5%203.5-1.6%203.5-3.5%203.5z%22%20fill%3D%22%23f5b84f%22%20transform%3D%22translate%28103%2C%2012%29%20scale%280.65%29%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22115%22%20y%3D%2265%22%20text-anchor%3D%22middle%22%20font-family%3D%22sans-serif%22%20font-size%3D%2215px%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%20text-transform%3D%22uppercase%22%20letter-spacing%3D%221px%22%3E200%2B%20Classes%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22115%22%20y%3D%2282%22%20text-anchor%3D%22middle%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212px%22%20font-weight%3D%22500%22%20fill%3D%22%238b9bb4%22%3EOpen-Vocab%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%28760%2C%2010%29%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22230%22%20height%3D%2290%22%20rx%3D%2212%22%20fill%3D%22url%28%23grad1%29%22%20stroke%3D%22%232a3b4c%22%20stroke-width%3D%221%22%20filter%3D%22url%28%23shadow%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M42.7%200H2.3C1%200%200%201%200%202.3v37.4c0%20.8.4%201.5%201.1%201.9.4.2.8.4%201.2.4.5%200%201-.2%201.4-.5l8.6-8.6%209.3%209.3c.6.6%201.6.6%202.2%200l10.9-10.9%206.2%206.2c.4.4.9.6%201.4.6s1-.2%201.4-.6c.8-.8.8-2%200-2.8l-7.3-7.3c-.6-.6-1.6-.6-2.2%200l-10.9%2010.9-9.3-9.3c-.6-.6-1.6-.6-2.2%200l-7.1%207.1V4.7h37.4V21c0%201.3%201%202.3%202.3%202.3s2.3-1%202.3-2.3V2.3C45%201%2044%200%2042.7%200z%22%20fill%3D%22%23ff878f%22%20transform%3D%22translate%28102%2C%2012%29%20scale%280.65%29%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22115%22%20y%3D%2265%22%20text-anchor%3D%22middle%22%20font-family%3D%22sans-serif%22%20font-size%3D%2215px%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%20text-transform%3D%22uppercase%22%20letter-spacing%3D%221px%22%3ECOCO%20mAP_S%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22115%22%20y%3D%2282%22%20text-anchor%3D%22middle%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212px%22%20font-weight%3D%22500%22%20fill%3D%22%238b9bb4%22%3EEvaluated%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E" alt="Premium Icons">
 </div>
-
----
 
 <div align="center">
 
