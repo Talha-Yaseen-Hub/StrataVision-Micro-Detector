@@ -290,7 +290,6 @@ Small-object performance can easily hide inside an overall mAP score — a model
 
 ```text
 Object-Detection/
-│
 ├── config/
 │   ├── dataset.yaml
 │   ├── dataset_toy.yaml
