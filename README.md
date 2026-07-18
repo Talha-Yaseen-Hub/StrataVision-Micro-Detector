@@ -286,30 +286,30 @@ Small-object performance can easily hide inside an overall mAP score — a model
 
 ---
 
-## 🏗️ Repository Folder & File Structure
+## 🏗️ Repository Structure
 
 ```text
 Object-Detection/
 │
-├── config/                         # Configuration files for dataset, training & SAHI
-│   ├── dataset.yaml                # Main dataset paths & 5 class definitions
-│   ├── dataset_toy.yaml            # Configuration for verification testing
-│   ├── sahi_config.yaml            # Hyperparameters for SAHI sliced inference
-│   └── training_config.yaml        # Training hyperparameters (epochs, imgsz, optimizer)
+├── config/
+│   ├── dataset.yaml
+│   ├── dataset_toy.yaml
+│   ├── sahi_config.yaml
+│   └── training_config.yaml
 │
-├── models/                         # Custom Neural Network Architectures
-│   └── yolov8n-p2.yaml             # 4-Head YOLOv8 (P2+P3+P4+P5) for small objects
+├── models/
+│   └── yolov8n-p2.yaml
 │
-├── src/                            # Core Source Code & Pipelines
-│   ├── train.py                    # Custom P2 model training pipeline
-│   ├── inference.py                # Single-image standard YOLO inference
-│   ├── sahi_inference.py           # SAHI sliced inference for 4K / drone images
-│   ├── live_camera.py              # Real-time live camera detection engine
-│   ├── evaluate.py                 # COCO mAP_S evaluation engine (Area < 32²px)
+├── src/
+│   ├── train.py
+│   ├── inference.py
+│   ├── sahi_inference.py
+│   ├── live_camera.py
+│   ├── evaluate.py
 │   └── utils/
-│       ├── dataset_utils.py        # Dataset structure & label validator
-│       ├── coco_converter.py       # YOLO → COCO converter
-│       └── visualization.py        # Bounding box & metrics renderer
+│       ├── dataset_utils.py
+│       ├── coco_converter.py
+│       └── visualization.py
 │
 ├── dataset/
 │   ├── train/
@@ -322,20 +322,37 @@ Object-Detection/
 │       ├── images/
 │       └── labels/
 │
-├── detection_models/               # Trained model weights (.pt)
+├── detection_models/
 ├── output/
-│   └── samples/                    # Example detections used in README
-├── metrics/                        # COCO evaluation reports
+│   └── samples/
+├── metrics/
 │
-├── generate_dataset.py             # Synthetic dataset generator
-├── download_clip.py                # OpenAI CLIP weights downloader
-├── verify_pipeline.py              # End-to-end pipeline verification
-├── requirements.txt                # Python dependencies
-├── setup.py                        # Package installation
-└── README.md                       # Project documentation
+├── generate_dataset.py
+├── download_clip.py
+├── verify_pipeline.py
+├── requirements.txt
+├── setup.py
+└── README.md
 ```
 
-> ✏️ **Correction from the original notes:** `src/live_camera.py` had been accidentally listed twice under the same name as `sahi_inference.py`. It's fixed above and cross-checked against the [Summary Table](#-summary-table-of-key-scripts) below — worth double-checking your actual filesystem matches this before anyone else clones the repo.
+### 📁 Folder & File Summary
+
+| 📂 Folder / File | 📝 Description |
+|:-----------------|:---------------|
+| `config/` | Dataset configuration, training parameters, and SAHI settings |
+| `models/` | Custom YOLOv8 neural network architecture (P2 head) |
+| `src/` | Core training, inference, evaluation, and utility scripts |
+| `src/utils/` | Dataset validation, COCO conversion, and visualization helpers |
+| `dataset/` | Training, validation, and testing datasets |
+| `detection_models/` | Saved trained model weights (`.pt`) |
+| `output/samples/` | Sample detection results used in the README |
+| `metrics/` | COCO evaluation reports and performance metrics |
+| `generate_dataset.py` | Synthetic dataset generation script |
+| `download_clip.py` | OpenAI CLIP model downloader |
+| `verify_pipeline.py` | End-to-end pipeline verification |
+| `requirements.txt` | Python package dependencies |
+| `setup.py` | Package installation script |
+| `README.md` | Project documentation |
 
 <div align="right"><a href="#small-object-detection">↑ back to top</a></div>
 
