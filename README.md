@@ -287,46 +287,46 @@ Small-object performance can easily hide inside an overall mAP score — a model
 ---
 
 ## 🏗️ Repository Folder & File Structure
+```
 
----
-Object-Detection/
-│
-├── config/                         # Configuration files for dataset, training & SAHI
-│   ├── dataset.yaml                # Main dataset paths & 5 class definitions
-│   ├── dataset_toy.yaml            # Configuration for verification testing
-│   ├── sahi_config.yaml            # Hyperparameters for SAHI sliced inference
-│   └── training_config.yaml        # Training hyperparameters (epochs, imgsz, optimizer)
-│
-├── models/                         # Custom Neural Network Architectures
-│   └── yolov8n-p2.yaml             # 4-Head YOLOv8 (P2+P3+P4+P5) for small objects
-│
-├── src/                            # Core Source Code & Pipelines
-│   ├── train.py                    # Custom P2 model training pipeline
-│   ├── inference.py                # Single-image standard YOLO inference
-│   ├── sahi_inference.py           # SAHI sliced inference for 4K / drone images
-│   ├── live_camera.py              # Real-time live camera detection engine
-│   ├── evaluate.py                 # COCO mAP_S evaluation engine (Area < 32²px)
-│   └── utils/                      # Helper Utilities
-│       ├── dataset_utils.py        # Dataset structure & label validator
-│       ├── coco_converter.py       # YOLO label (.txt) → COCO format (.json) converter
-│       └── visualization.py        # Bounding box & metrics plot renderer
-│
-├── dataset/                        # Training, Validation, and Test Data
-│   ├── train/ (images/ & labels/)  # Training split
-│   ├── val/   (images/ & labels/)  # Validation split
-│   └── test/  (images/ & labels/)  # Test split
-│
-├── detection_models/               # Directory where trained weights (.pt) are saved
-├── output/                         # Saved inference images & screenshots
-│   └── samples/                     # Curated example detections shown in this README
-├── metrics/                        # COCO evaluation JSON reports & metrics
-│
-├── generate_dataset.py             # Synthetic dataset generator for 5 custom classes
-├── download_clip.py                # Resumable downloader for OpenAI CLIP weights
-├── verify_pipeline.py              # End-to-end smoke test script for pipeline verification
-├── requirements.txt                # System Python dependencies
-├── setup.py                        # Package installation script
-└── README.md                       # Project documentation
+ Object-Detection/
+ │
+ ├── config/                         # Configuration files for dataset, training & SAHI
+ │   ├── dataset.yaml                # Main dataset paths & 5 class definitions
+ │   ├── dataset_toy.yaml            # Configuration for verification testing
+ │   ├── sahi_config.yaml            # Hyperparameters for SAHI sliced inference
+ │   └── training_config.yaml        # Training hyperparameters (epochs, imgsz, optimizer)
+ │
+ ├── models/                         # Custom Neural Network Architectures
+ │   └── yolov8n-p2.yaml             # 4-Head YOLOv8 (P2+P3+P4+P5) for small objects
+ │
+ ├── src/                            # Core Source Code & Pipelines
+ │   ├── train.py                    # Custom P2 model training pipeline
+ │   ├── inference.py                # Single-image standard YOLO inference
+ │   ├── sahi_inference.py           # SAHI sliced inference for 4K / drone images
+ │   ├── live_camera.py              # Real-time live camera detection engine
+ │   ├── evaluate.py                 # COCO mAP_S evaluation engine (Area < 32²px)
+ │   └── utils/                      # Helper Utilities
+ │       ├── dataset_utils.py        # Dataset structure & label validator
+ │       ├── coco_converter.py       # YOLO label (.txt) → COCO format (.json) converter
+ │       └── visualization.py        # Bounding box & metrics plot renderer
+ │
+ ├── dataset/                        # Training, Validation, and Test Data
+ │   ├── train/ (images/ & labels/)  # Training split
+ │   ├── val/   (images/ & labels/)  # Validation split
+ │   └── test/  (images/ & labels/)  # Test split
+ │
+ ├── detection_models/               # Directory where trained weights (.pt) are saved
+ ├── output/                         # Saved inference images & screenshots
+ │   └── samples/                     # Curated example detections shown in this README
+ ├── metrics/                        # COCO evaluation JSON reports & metrics
+ │
+ ├── generate_dataset.py             # Synthetic dataset generator for 5 custom classes
+ ├── download_clip.py                # Resumable downloader for OpenAI CLIP weights
+ ├── verify_pipeline.py              # End-to-end smoke test script for pipeline verification
+ ├── requirements.txt                # System Python dependencies
+ ├── setup.py                        # Package installation script
+ └── README.md                       # Project documentation
 ---
 
 > ✏️ **Correction from the original notes:** `src/live_camera.py` had been accidentally listed twice under the same name as `sahi_inference.py`. It's fixed above and cross-checked against the [Summary Table](#-summary-table-of-key-scripts) below — worth double-checking your actual filesystem matches this before anyone else clones the repo.
