@@ -1,0 +1,9 @@
+# YOLO format labels: [class_id] [x_center] [y_center] [width] [height]
+# All values normalized to [0, 1] relative to image dimensions.
+#
+# CRITICAL FOR SMALL OBJECTS:
+# Bounding boxes must be EXTREMELY TIGHT — any background pixels
+# inside the box act as noise at the micro-object scale.
+#
+# Example (drone at center of image, tiny):
+#   0 0.5123 0.3456 0.0234 0.0189

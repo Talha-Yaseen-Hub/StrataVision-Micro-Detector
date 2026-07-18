@@ -1,0 +1,68 @@
+# =============================================================================
+# .gitignore — Advanced Small Object Detection
+# =============================================================================
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# --- Virtual Environment ---
+venv/
+env/
+.env/
+
+# --- IDE ---
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# --- Model Weights (large binary files) ---
+detection_models/*/weights/*.pt
+detection_models/*/weights/*.onnx
+*.pt
+*.onnx
+*.engine
+*.trt
+
+# --- Dataset Images (keep structure, ignore bulk data) ---
+dataset/train/images/*.jpg
+dataset/train/images/*.jpeg
+dataset/train/images/*.png
+dataset/train/images/*.bmp
+dataset/val/images/*.jpg
+dataset/val/images/*.jpeg
+dataset/val/images/*.png
+dataset/val/images/*.bmp
+dataset/test/images/*.jpg
+dataset/test/images/*.jpeg
+dataset/test/images/*.png
+dataset/test/images/*.bmp
+test_images/*.jpg
+test_images/*.jpeg
+test_images/*.png
+
+# --- Output (generated files) ---
+output/
+metrics/sahi_evaluation/
+runs/
+
+# --- Training Artifacts ---
+detection_models/*/
+!detection_models/.gitkeep
+
+# --- Logs ---
+*.log
+wandb/
+mlruns/
+
+# --- OS ---
+Thumbs.db
+.DS_Store

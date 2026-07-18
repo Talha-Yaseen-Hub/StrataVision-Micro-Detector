@@ -1,0 +1,36 @@
+# =============================================================================
+# Advanced Small Object Detection — Python Dependencies
+# =============================================================================
+# Core detection framework
+ultralytics>=8.2.0
+
+# SAHI - Slicing Aided Hyper Inference
+sahi>=0.11.18
+
+# PyTorch (CUDA 12.1) — adjust for your CUDA version
+# Uncomment the appropriate line for your system:
+# torch>=2.2.0 --index-url https://download.pytorch.org/whl/cu121
+# torch>=2.2.0 --index-url https://download.pytorch.org/whl/cu118
+# torch>=2.2.0  # CPU only
+torch>=2.2.0
+torchvision>=0.17.0
+
+# COCO evaluation tools
+pycocotools>=2.0.8
+
+# Image processing
+opencv-python>=4.9.0
+Pillow>=10.2.0
+
+# Data handling & configuration
+numpy>=1.26.0
+pyyaml>=6.0.1
+
+# Visualization & reporting
+matplotlib>=3.8.0
+seaborn>=0.13.0
+plotly>=5.18.0
+tqdm>=4.66.0
+
+# Logging & experiment tracking (optional)
+tensorboard>=2.16.0

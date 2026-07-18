@@ -1,0 +1,8 @@
+# Place your training images here.
+# Supported formats: .jpg, .jpeg, .png, .bmp, .tiff, .webp
+#
+# Each image should have a corresponding label file in ../labels/
+# with the same filename but .txt extension.
+#
+# Example:
+#   images/drone_001.jpg  →  labels/drone_001.txt

@@ -1,0 +1,57 @@
+# =============================================================================
+# SAHI Inference Configuration — Slicing Aided Hyper Inference
+# =============================================================================
+# Settings for processing high-resolution images (4K, 8K, satellite, drone)
+# by slicing them into overlapping patches for small object detection.
+#
+# HOW IT WORKS:
+#   1. Image is sliced into a grid of [slice_height × slice_width] patches
+#   2. Adjacent patches overlap by [overlap_ratio] to avoid boundary cuts
+#   3. Each patch is independently processed by the YOLO model
+#   4. Detections are mapped back to original image coordinates
+#   5. Non-Maximum Suppression (NMS) merges duplicates from overlaps
+# =============================================================================
+
+# --- Model ---
+model_type: "yolov8"
+model_path: "detection_models/small_object_p2_1280/weights/best.pt"
+device: "cuda:0"                     # "cuda:0" for GPU, "cpu" for CPU
+
+# --- Confidence & NMS ---
+confidence_threshold: 0.35           # Minimum detection confidence
+                                     # Lower (0.2) = more detections, more false positives
+                                     # Higher (0.5) = fewer detections, higher precision
+nms_iou_threshold: 0.45              # NMS IoU threshold for merging overlapping boxes
+                                     # Lower = more aggressive merging
+                                     # Higher = more permissive (keeps more boxes)
+
+# --- Slicing Parameters ---
+slice_height: 512                    # Height of each image patch (pixels)
+slice_width: 512                     # Width of each image patch (pixels)
+                                     # Should be ≤ model's training resolution (1280px)
+                                     # 512x512 is optimal for most small-object scenarios
+
+overlap_height_ratio: 0.2            # Vertical overlap between adjacent patches (20%)
+overlap_width_ratio: 0.2             # Horizontal overlap between adjacent patches (20%)
+                                     # Higher overlap → fewer boundary misses
+                                     # but more patches → slower inference
+                                     # 0.2 (20%) is a good balance
+
+# --- Full Image Inference (Optional) ---
+# Run standard inference on the full image IN ADDITION to sliced inference.
+# This helps catch large objects that might be fragmented by slicing.
+perform_standard_prediction: true
+standard_prediction_confidence: 0.35
+
+# --- Post-Processing ---
+postprocess_type: "NMS"              # "NMS" or "NMM" (Non-Maximum Merging)
+                                     # NMS: Standard suppression — keeps highest confidence box
+                                     # NMM: Merges overlapping boxes — better for dense scenes
+postprocess_match_metric: "IOU"      # "IOU" or "IOS" (Intersection over Smaller)
+postprocess_match_threshold: 0.5     # Threshold for the match metric
+
+# --- Output ---
+export_dir: "output"                 # Directory for visual results
+export_visual: true                  # Save annotated images
+export_crop: false                   # Save cropped detections
+verbose: 2                           # Verbosity level (0=silent, 1=progress, 2=detailed)

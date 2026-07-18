@@ -1,0 +1,5 @@
+# Place high-resolution test images here for SAHI inference.
+# Optimal for 4K, 8K, satellite, or drone imagery.
+#
+# Run inference:
+#   python src/sahi_inference.py --image test_images/your_image.jpg

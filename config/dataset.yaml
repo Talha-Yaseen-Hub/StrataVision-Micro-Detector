@@ -1,0 +1,38 @@
+# =============================================================================
+# Dataset Configuration — Advanced Small Object Detection
+# =============================================================================
+# This file defines the dataset paths and class mappings for YOLO training.
+# Modify the paths and class names to match your specific dataset.
+#
+# IMPORTANT: Bounding box annotations for small objects must be extremely
+# tight — any background pixels inside the box act as noise and degrade
+# detection accuracy at the micro-object scale.
+# =============================================================================
+
+# Paths are relative to where the training script is executed from,
+# or can be absolute paths on your system.
+path: dataset              # Root directory of the dataset (relative to project root)
+train: train/images        # Training images (relative to 'path')
+val: val/images            # Validation images (relative to 'path')
+test: test/images          # Test images (relative to 'path')
+
+# --------------------------------------------------------------------------
+# Class Definitions
+# --------------------------------------------------------------------------
+# Modify these to match your specific detection targets.
+# The class index corresponds to the first number in each YOLO label line.
+#
+# Example label line: 0 0.5123 0.3456 0.0234 0.0189
+#   → class_id=0 (drone), x_center=0.5123, y_center=0.3456, w=0.0234, h=0.0189
+# --------------------------------------------------------------------------
+
+# Number of classes
+nc: 5
+
+# Class names (index matches class_id in labels)
+names:
+  0: drone
+  1: bird
+  2: vehicle
+  3: person
+  4: small_component

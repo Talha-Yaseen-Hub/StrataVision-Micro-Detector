@@ -1,0 +1,69 @@
+# =============================================================================
+# Training Configuration — Advanced Small Object Detection
+# =============================================================================
+# Hyperparameters tuned for detecting objects < 32x32 pixels.
+#
+# KEY PRINCIPLES:
+#   1. Train at HIGH RESOLUTION (1280px) to preserve pixel density
+#   2. Use P2 architecture (4-head) for micro-object feature extraction
+#   3. AdamW optimizer for better convergence on complex architectures
+#   4. Lower batch size to fit 1280px images in VRAM
+# =============================================================================
+
+# --- Model Architecture ---
+model: "models/yolov8n-p2.yaml"   # P2 4-head architecture (nano variant)
+# Alternatives:
+#   yolov8s-p2.yaml               # Small — better accuracy, more VRAM
+#   yolov8m-p2.yaml               # Medium — recommended for production
+#   yolov8l-p2.yaml               # Large — highest accuracy, most VRAM
+
+# --- Dataset ---
+data: "config/dataset.yaml"       # Path to dataset configuration
+                                  # NOTE: dataset/ must have train/ and val/ images
+
+# --- Training Hyperparameters ---
+epochs: 150                       # Small objects need more epochs to converge
+patience: 30                      # Early stopping patience (epochs without improvement)
+imgsz: 1280                       # CRITICAL: High resolution preserves small target pixels
+                                  # At 1280px, a 60px object in 4K stays ~20px (detectable)
+                                  # At 640px, the same object shrinks to ~10px (noise)
+
+batch: 4                          # Reduced batch to fit 1280px in VRAM
+                                  # Increase if your GPU has > 16GB VRAM:
+                                  #   24GB VRAM → batch: 8
+                                  #   48GB VRAM → batch: 16
+
+# --- Optimizer ---
+optimizer: "AdamW"                # AdamW handles complex P2 architecture better than SGD
+lr0: 0.001                        # Initial learning rate
+lrf: 0.01                         # Final learning rate (fraction of lr0)
+weight_decay: 0.0005              # L2 regularization
+warmup_epochs: 5                  # Gradual learning rate warmup
+warmup_momentum: 0.8              # Warmup momentum
+warmup_bias_lr: 0.1               # Warmup bias learning rate
+
+# --- Augmentation ---
+# Conservative augmentation — aggressive transforms can destroy small objects
+hsv_h: 0.015                     # HSV hue augmentation
+hsv_s: 0.5                       # HSV saturation augmentation
+hsv_v: 0.3                       # HSV value augmentation
+degrees: 5.0                     # Rotation (keep small — rotation destroys tiny objects)
+translate: 0.1                   # Translation
+scale: 0.3                       # Scale augmentation
+shear: 2.0                       # Shear (minimal)
+flipud: 0.3                      # Vertical flip probability
+fliplr: 0.5                      # Horizontal flip probability
+mosaic: 0.8                      # Mosaic augmentation (helpful for small objects)
+mixup: 0.1                       # Mixup augmentation (light)
+copy_paste: 0.2                  # Copy-paste augmentation (good for small objects)
+
+# --- Output ---
+project: "detection_models"       # Output project directory
+name: "small_object_p2_1280"      # Run name
+exist_ok: true                    # Overwrite existing run
+save_period: 10                   # Save checkpoint every N epochs
+plots: true                       # Generate training plots
+
+# --- Hardware ---
+device: "0"                       # GPU device (0 for first GPU, "cpu" for CPU)
+workers: 4                        # DataLoader workers
