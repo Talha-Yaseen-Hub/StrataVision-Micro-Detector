@@ -1,7 +1,7 @@
 <a id="small-object-detection"></a>
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=240&section=header&text=Small%20Object%20Detection&fontSize=54&fontColor=ffffff&animation=fadeIn&fontAlignY=32&desc=Real-Time%20Universal%20Detection%20System&descAlignY=52&descSize=20&fontList=Inter"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=240&section=header&text=StrataVision%20Micro%20Detector&fontSize=54&fontColor=ffffff&animation=fadeIn&fontAlignY=32&desc=Real-Time%20Universal%20Detection%20System&descAlignY=52&descSize=20&fontList=Inter"/>
 
 <br/>
 
@@ -9,11 +9,11 @@
 
 <br/><br/>
 
-<img src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
-<img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" />
-<img src="https://img.shields.io/badge/YAML-CB171E?style=for-the-badge&logo=yaml&logoColor=white" />
-<img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" />
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=python,pytorch,opencv,git,github,vscode,linux&theme=dark" />
+
+</div>
 
 <br/><br/>
 
@@ -139,8 +139,6 @@ A look at the pipeline running on three very different scenes — dense street t
 </tr>
 </table>
 </div>
-
-> 📁 **How to get these showing up on GitHub without committing image files:** open `README.md` on github.com, click **Edit** (✏️), then drag each image straight into the text editor (or paste it from your clipboard). GitHub uploads it to its own asset CDN and inserts a URL like `https://github.com/user-attachments/assets/...`. Copy that URL and swap it into the matching `src="..."` below, replacing the `output/samples/...` placeholder path — then just commit the text change. No image files need to be added to the repo itself.
 
 <div align="right"><a href="#small-object-detection">↑ back to top</a></div>
 
