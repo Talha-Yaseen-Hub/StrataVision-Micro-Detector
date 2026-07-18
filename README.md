@@ -286,6 +286,11 @@ Small-object performance can easily hide inside an overall mAP score — a model
 
 ---
 
+</div>
+
+<br>
+
+
 ## 🏗️ Repository Structure
 
 ```text
